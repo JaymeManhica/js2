@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Exemplo de mudança de cor com mouseover</title>
+    <style>
+      #myDiv {
+        width: 300px;
+        height: 300px;
+        background-color: red;
+        border-radius: 20px;
+        text-align: center;
+        color: white;
+        font-size: large;
+        box-shadow: 10px 10px 10px black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myDiv">Passe o mouse sobre mim e veja o que acontece</div>
+    <script>
+      var div = document.getElementById("myDiv");
+      var colors = ["red", "green", "black", "blue"];
+      var currentColorIndex = 0;
+
+      div.addEventListener("mouseover", function() {
+        currentColorIndex = (currentColorIndex + 1) % colors.length;
+        div.style.backgroundColor = colors[currentColorIndex];
+      });
+    </script>
+  </body>
+</html>
